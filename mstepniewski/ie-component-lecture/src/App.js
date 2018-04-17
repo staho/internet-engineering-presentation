@@ -86,7 +86,9 @@ class App extends Component {
 
       return (
          <div className="App">
-            <Greeting />
+            {!this.state.unleashed &&
+               <Greeting />
+            }
 
             {this.state.unleashed &&
                <WillItBoil temperature={this.state.temperature} scale={this.state.scale} />

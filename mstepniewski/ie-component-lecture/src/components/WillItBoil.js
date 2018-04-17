@@ -17,6 +17,7 @@ class WillItBoil extends Component {
       scale: null
    }
 
+
    static getDerivedStateFromProps = (props, currentState) => {
       if (currentState.temperature !== props.temperature || currentState.scale !== props.scale) {
          return {
@@ -28,6 +29,7 @@ class WillItBoil extends Component {
 
       return null
    }
+
 
    componentWillUnmount = () => {
       console.log('⏏️ WillItBoil component will be unmounted!')
@@ -43,7 +45,7 @@ class WillItBoil extends Component {
          justifyContent: 'center',
          alignContent: 'center',
          flexDirection: 'column',
-         height: '80px',
+         height: '100px',
          marginTop: '30px',
          backgroundImage: this.state.willBoil ? `url(${elmo})` : null,
          backgroundRepeat: 'repeat-y',
@@ -52,7 +54,10 @@ class WillItBoil extends Component {
 
       return (
          <div style={style}>
-            {this.state.willBoil ? '🔥 IT WILL BOIL 🔥' : 'It will NOT boil 💧'}
+            {this.state.temperature ?
+               (this.state.willBoil ? '🔥 IT WILL BOIL 🔥' : 'It will NOT boil 💧')
+               : 'Provide temperature value...'
+            }
          </div>
       )
    }
