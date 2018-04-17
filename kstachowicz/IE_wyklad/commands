@@ -15,3 +15,5 @@ yarn add html-webpack-plugin
 Z powodu błędu koniecznie było dodanie: yarn add webpack-cli -D
 
 yarn add react react-dom
+
+npm run dist

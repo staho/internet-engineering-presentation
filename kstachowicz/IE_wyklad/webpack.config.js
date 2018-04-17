@@ -21,12 +21,13 @@ module.exports = {
      */
   entry: './client/index.js',
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js'
   },
   module: {
     rules: [
-      { test: /\.scss$/,
+      { 
+        test:/\.(s*)css$/,
         use: [
           { loader: "style-loader" },
           { loader: "css-loader" },
@@ -44,5 +45,6 @@ module.exports = {
       }
     ]
   },
+
   plugins: [HtmlWebpackPluginConfig],
 }
