@@ -1,10 +1,11 @@
 # Draft
 ## Bootstrapping and Debugging
-* create-react-app  
+* [create-react-app](https://github.com/facebook/create-react-app)
 ```bash
 npx create-react-app app-name  
 cd app-name  
 yarn start
+yarn run build # for making prod builds
 ```
 * Browser dev tools
   * Javascript console
@@ -19,9 +20,13 @@ console.log("yo, I'm alive")
 ```  
 <https://medium.com/@baphemot/intro-to-debugging-reactjs-applications-67cf7a50b3dd>
 ## CSS
-* SASS
-* Animations
-* sass+jsx
- 
+* Why SCSS?
+  * Inheritance
+  * Imports
+  * Loops
+  * Variables
+  * Nesting
+* I
+
 @Radosław Pieja: style CSS, tworzenie projektu i Debugowanie (edited)
 
