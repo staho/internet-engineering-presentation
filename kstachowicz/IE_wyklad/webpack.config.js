@@ -21,7 +21,7 @@ module.exports = {
      */
   entry: './client/index.js',
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js'
   },
   module: {
@@ -44,5 +44,6 @@ module.exports = {
       }
     ]
   },
+
   plugins: [HtmlWebpackPluginConfig],
 }
