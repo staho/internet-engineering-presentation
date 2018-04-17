@@ -1,0 +1,14 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #ffffff;
+
+.hello-app {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background-color: #0036c1;
+    width: 80vw;
+    height: 40vw;
+    padding: 25px;
+    margin: 25px;
+    border: 25px solid #3d4247;
+    text-align: center;
+    }

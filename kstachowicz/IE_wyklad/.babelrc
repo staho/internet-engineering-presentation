@@ -1,0 +1,6 @@
+{
+    "presets":[
+        "es2015", "react"   //mówimy babelowi według jakich standardów będzie pisany kod
+
+    ]
+}
