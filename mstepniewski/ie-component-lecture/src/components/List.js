@@ -6,6 +6,7 @@ class List extends Component {
       this.state = {}
    }
 
+
    render() {
       return (
          <div style={{ marginTop: '30px' }}>
@@ -15,7 +16,6 @@ class List extends Component {
                   {child}
                </div>
             })}
-
 
          </div>
       )
