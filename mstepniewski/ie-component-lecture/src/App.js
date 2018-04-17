@@ -7,26 +7,32 @@ import './App.css';
 class App extends Component {
    state = {
       unleashed: false,
-      childrenList: [],
       buttonText: 'SHOW ME MORE',
       message: '',
       scale: 'C',
-      temperature: 0,
+      temperature: null,
    }
+
 
    unleash = () => {
       this.setState({
          unleashed: !this.state.unleashed,
-         buttonText: this.state.unleashed ? 'SHOW ME MORE' : 'SHOW ME LESS'
+         buttonText: this.state.unleashed ? 'SHOW ME MORE' : 'SHOW ME LESS',
       })
    }
+
 
    componentWillMount = () => {
       console.log('▶️ App component will mount!')
    }
 
-   componentDidMount() {
+
+   createList = () => {
       const list = [
+         <div>
+            {this.state.temperature && (this.state.temperature + (this.state.scale === 'C' ? '℃' : '℉'))}
+         </div>,
+         <br />,
          <div>
             <input
                type="radio"
@@ -44,11 +50,20 @@ class App extends Component {
                defaultChecked={'F' === this.state.scale}
                onChange={this.onRadioChanged} /> Fahrenheit
          </div>,
-         <input placeholder='insert value...' onChange={this.onInputChange} />
+         <input
+            placeholder={this.state.temperature ? this.state.temperature : 'insert value..'}
+            onChange={this.onInputChange}
+         />
       ]
 
-      this.setState({ childrenList: list })
+      return list
    }
+
+
+   componentDidMount() {
+      console.log('▶️ App component did mount!')
+   }
+
 
    onInputChange = event => {
       const input = event.target
@@ -56,6 +71,7 @@ class App extends Component {
          // console.log(this.state.temperature)
       })
    }
+
 
    onRadioChanged = event => {
       const radio = event.target
@@ -66,6 +82,8 @@ class App extends Component {
 
 
    render() {
+      const childrenList = this.createList()
+
       return (
          <div className="App">
             <Greeting />
@@ -84,7 +102,7 @@ class App extends Component {
 
             {this.state.unleashed &&
                <List
-                  children={this.state.childrenList}
+                  children={childrenList}
                   temperature={this.state.temperature}
                   scale={this.state.scale}
                />
