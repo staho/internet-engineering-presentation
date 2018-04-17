@@ -1,0 +1,11 @@
+.hello-box {
+    display: table;
+    margin: 0 auto;
+    background-color: #134242;
+    width: 80%;
+    height: 30%;
+    padding: 15px;
+    border: 15px solid #e2ad00;
+    text-align: center;
+    color: white;
+}
