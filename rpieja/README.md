@@ -26,7 +26,3 @@ console.log("yo, I'm alive")
   * Loops
   * Variables
   * Nesting
-* I
-
-@Radosław Pieja: style CSS, tworzenie projektu i Debugowanie (edited)
-
