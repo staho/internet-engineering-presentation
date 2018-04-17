@@ -86,6 +86,7 @@ class App extends Component {
 
       return (
          <div className="App">
+
             {!this.state.unleashed &&
                <Greeting />
             }
@@ -103,11 +104,7 @@ class App extends Component {
             </button>
 
             {this.state.unleashed &&
-               <List
-                  children={childrenList}
-                  temperature={this.state.temperature}
-                  scale={this.state.scale}
-               />
+               <List children={childrenList} />
             }
 
          </div >
