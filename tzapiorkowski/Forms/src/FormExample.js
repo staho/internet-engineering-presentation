@@ -11,6 +11,7 @@ class FormExample extends React.Component {
     }
 
     getValidationState = () => {
+        console.log("elo")
         const length = this.state.value.length;
         if (length > 10) return 'success';
         else if (length > 5) return 'warning';
@@ -27,7 +28,7 @@ class FormExample extends React.Component {
             <form>
                 <FormGroup
                     controlId="formBasicText"
-                    validationState={this.getValidationState}
+                    validationState={this.getValidationState()}
                 >
                     <ControlLabel>Working example with validation</ControlLabel>
                     <FormControl
