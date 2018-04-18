@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Greeting from './components/Greeting'
+import GreetingWithoutJSX from './components/GreetingWithoutJSX'
 import List from './components/List'
 import WillItBoil from './components/WillItBoil'
 import './App.css';
@@ -8,7 +9,6 @@ class App extends Component {
    state = {
       unleashed: false,
       buttonText: 'SHOW ME MORE',
-      message: '',
       scale: 'C',
       temperature: null,
    }
@@ -24,6 +24,11 @@ class App extends Component {
 
    componentWillMount = () => {
       console.log('▶️ App component will mount!')
+   }
+
+
+   componentDidMount() {
+      console.log('▶️ App component did mount!')
    }
 
 
@@ -60,11 +65,6 @@ class App extends Component {
    }
 
 
-   componentDidMount() {
-      console.log('▶️ App component did mount!')
-   }
-
-
    onInputChange = event => {
       const input = event.target
       this.setState({ temperature: input.value }, () => {
@@ -88,7 +88,11 @@ class App extends Component {
          <div className="App">
 
             {!this.state.unleashed &&
-               <Greeting />
+               <div>
+                  <Greeting />
+                  <br />
+                  <GreetingWithoutJSX />
+               </div>
             }
 
             {this.state.unleashed &&
